@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
-import { Button } from "semantic-ui-react";
+import { Button, Segment, Grid } from "semantic-ui-react";
 
 import StarWarsCharDisplay from "./components/StarWarsCharDisplay";
 
@@ -61,12 +61,18 @@ function App() {
   return (
     <div className="App">
       <h1>React Wars</h1>
-      <Button color="blue" onClick={prevPageHandler}>
-        Previous
-      </Button>
-      <Button color="blue" onClick={nextPageHandler}>
-        Next
-      </Button>
+      <Grid columns={2} relaxed="very">
+        <Grid.Column>
+          <Button color="blue" onClick={prevPageHandler} className="button">
+            Previous
+          </Button>
+        </Grid.Column>
+        <Grid.Column>
+          <Button color="blue" onClick={nextPageHandler} className="button">
+            Next
+          </Button>
+        </Grid.Column>
+      </Grid>
       <StarWarsCharDisplay starWarsChars={starWarsChars} />
     </div>
   );
